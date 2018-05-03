@@ -1,0 +1,44 @@
+body {
+    margin: 0% auto;
+    background-image: url("background.jpg");
+}
+
+.header {
+    padding-bottom: 25px;
+    background-image: url("nature.png");
+}
+
+.header p {
+    margin-left: 10%;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    padding-top: 2%;
+}
+
+h3 {
+    margin-top: 0%;
+}
+
+.locate {
+    font-weight: bold;
+    color: darkgray;
+}
+
+.contact {
+    word-spacing: 15px;
+}
+
+h3,
+legend,
+label {
+    color: white;
+}
+
+.contact,
+.locate,
+h3,
+table,
+form {
+    text-align: center;
+}
