@@ -6,8 +6,9 @@
 
 <body>
     <div class="header">
-        <p>WEATHER</p>
+        <h1>WEATHER</h1>
     </div>
+    <!--  Getting information based on API key -->
     <h3>ABOUT US</h3>
     <div class="locate">
         <button onclick=getinfo()>GET INFORMATION</button>
@@ -18,37 +19,40 @@
         <p id="lat"></p>
         <p id="log"></p>
     </div>
+    <!--  Generating form along with validations -->
     <div class="contact">
-        <form name=details onsubmit="return checkforblank()">
+        <form name=details>
             <fieldset>
                 <legend>CONTACT INFO</legend>
                 <table style="margin-left: 40%;">
                     <tr>
                         <td> <label>Name:</label></td>
-                        <td> <input type="text" name="name" minlength="8" maxlength="26" required pattern="[A-Za-z]{8,26}" title="Only characters are allowed Min:8characters and Max:26characters">
+                        <td> <input type="text" name="name" onblur="checkforblank()">
                         </td>
+                        <td><span id="username"></span></td>
                     </tr>
                     <tr>
                         <td><label>Email:</label></td>
-                        <td> <input type="email" name="email" required pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}$" title="Give a proper emailid">
+                        <td> <input type="email" name="email" onblur="validateemail()">
                         </td>
+                        <td><span id="mails"></span></td>
                     </tr>
                     <tr>
                         <td> <label>Confirm:</label></td>
-                        <td> <input type="email" name="Confirmemail" required onblur="Confirm()">
+                        <td> <input type="email" name="Confirmemail" onblur="confirmmail()">
                         </td>
+                        <td><span id="con"></span></td>
                     </tr>
 
                     <tr>
                         <td><label>Phoneno.</label></td>
-                        <td> <input type="text" name="Phoneno" required pattern="[7-9]{1}[0-9]{9}" title="Only 10 digits allowed start from 7,8,9 digits">
+                        <td> <input type="number" max=10 name="Phoneno" onblur="phonenumber()">
                         </td>
+                        <td><span id="phones"></span></td>
                     </tr>
                 </table>
-                <button>INSERT</button>
-                <button onclick="formpopup();">SAVE</button>
-
-
+                <p>
+                    <input type="button" onclick="formpopup()" value="SAVE"></p>
             </fieldset>
         </form>
     </div>
